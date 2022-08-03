@@ -1,0 +1,26 @@
+﻿<Window x:Class="GUIBMICalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUIBMICalculator"
+        mc:Ignorable="d"
+        Title="BMI Calculator" Height="450" Width="800">
+    <Grid>
+        <Label x:Name="lblTitle" Content="BMI Calculator" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="291,10,0,0" Height="58" Width="221" FontSize="30" FontWeight="Bold" FontFamily="Impact"/>
+        <Slider x:Name="slWeight" HorizontalAlignment="Left" Margin="197,211,0,0" VerticalAlignment="Top" Width="231" Maximum="500" ValueChanged="SlWeight_ValueChanged" TickPlacement="BottomRight" Cursor="Hand" AutoToolTipPrecision="1" TickFrequency="10" IsSnapToTickEnabled="True"/>
+        <Button x:Name="btnCalculate" Content="Calculate BMI" HorizontalAlignment="Left" Margin="197,268,0,0" VerticalAlignment="Top" Width="231" Height="36" FontSize="16" FontWeight="Bold" Click="BtnCalculate_Click" FontFamily="Global Monospace"/>
+        <Label x:Name="lblWeight" Content="Weight" HorizontalAlignment="Left" Height="30" Margin="124,204,0,0" VerticalAlignment="Top" Width="59" FontSize="14" FontWeight="Bold" FontFamily="Global Monospace"/>
+        <Label x:Name="lblWeightMeasure" Content="{Binding ElementName=slWeight, Path=Value}" Width="62" HorizontalAlignment="Left" Margin="450,211,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="lblFeet" Content="Feet" HorizontalAlignment="Left" Height="30" Margin="124,111,0,0" VerticalAlignment="Top" Width="59" FontSize="14" FontWeight="Bold" FontFamily="Global Monospace"/>
+        <Label x:Name="lblInches" Content="Inches" HorizontalAlignment="Left" Height="30" Margin="322,112,0,0" VerticalAlignment="Top" Width="59" FontSize="14" FontWeight="Bold" FontFamily="Global Monospace"/>
+        <Label x:Name="lblBmiDisplay" Content="" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="275,309,0,0" VerticalAlignment="Top" Height="40" Width="84" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="txtFeet" HorizontalAlignment="Left" Height="23" Margin="172,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtInches" HorizontalAlignment="Left" Height="23" Margin="386,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Image Name="unknown" Margin="627,28,38,10" Source="unknown.png" Stretch="Fill" />
+        <Image Name="healthy" Margin="627,28,38,10" Source="healthy.png" Stretch="Fill" Visibility="Collapsed"/>
+        <Image Name="obese" Margin="618,28,26,10" Source="obese.png" Stretch="Fill" Visibility="Collapsed"/>
+        <Image Name="overweight" Margin="622,28,38,10" Source="overweight.png" Stretch="Fill" Visibility="Collapsed"/>
+        <Image Name="underweight" Margin="629,38,38,10" Source="underweight.png" Stretch="Fill" Visibility="Collapsed"/>
+    </Grid>
+</Window>
